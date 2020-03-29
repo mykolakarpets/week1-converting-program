@@ -9,9 +9,9 @@ namespace {
     constexpr int N = 40;
 
     template <class T>
-    void sum(T &result, T n, vector<T>& d) {
+    void sum(T &result, vector<T>& data) {
         result = 0;
-        for (T i : d) {
+        for (T i : data) {
             result += i;
         }
     }
@@ -24,7 +24,7 @@ int main() {
         data[i] = i;
 
     int accum;
-    sum(accum, N, data);
+    sum(accum, data);
     cout << "sum is " << accum << endl;
 
     return 0;
