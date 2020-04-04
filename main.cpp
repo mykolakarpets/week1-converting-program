@@ -6,25 +6,27 @@ using std::endl;
 using std::vector;
 
 namespace {
-    constexpr int N = 40;
+    constexpr int n_elements = 40;
 
-    template <class T>
-    void sum(T &result, vector<T>& data) {
+    template <class Summable>
+    inline void sum(Summable &result, vector<Summable>& data) {
         result = 0;
-        for (T i : data) {
-            result += i;
+        for (Summable elem : data) {
+            result += elem;
         }
     }
 }
 
 int main() {
-    vector<int> data(N);
+    vector<int> data(n_elements);
 
-    for (int i = 0; i < N; ++i)
+    /* Assigning each element it's number. We need some random data */
+    for (int i = 0; i < n_elements; ++i)
         data[i] = i;
 
     int accum;
     sum(accum, data);
+
     cout << "sum is " << accum << endl;
 
     return 0;
